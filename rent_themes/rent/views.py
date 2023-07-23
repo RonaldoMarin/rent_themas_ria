@@ -20,8 +20,7 @@ class ClientViews:
 
     #Salva o novo cliente e volta para listagem de clientes
     def saveClient(request):
-        c = Client(name=request.POST['name'],
-                   email=request.POST['email'])
+        c = Client(name=request.POST['name'], email=request.POST['email'])
         c.save()
         
         if(request.POST['ddd1']!=''):
