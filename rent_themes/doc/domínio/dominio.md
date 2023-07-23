@@ -1,3 +1,7 @@
 ## Diagrama de domínio
 
-![](dominio.png)
+| versão | autores |
+| :----: | :-----: |
+| 1.0    | Adna e Ronaldo |
+
+![Diagrama de domínio](dominio.png)
