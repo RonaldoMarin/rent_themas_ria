@@ -5,9 +5,9 @@ from django.db.models.deletion import CASCADE
 
 class Client(models.Model):
     name = models.CharField(max_length=60, blank=False)
-    email = models.CharField(max_length=60, blank=True)
+    cpf = models.CharField(max_length=11, blank=True)
     def __str__(self):
-        return self.name
+        return self.name + self.cpf
 
 class Phone(models.Model):
     ddd = models.CharField(max_length=3)
@@ -30,7 +30,6 @@ class Theme(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=30, blank=False)
     description = models.CharField(max_length=200)
-    #theme = models.ForeignKey('Theme', on_delete=models.CASCADE, related_name='itens')
 
     def __str__(self):
         return self.name
@@ -48,10 +47,11 @@ class Rent(models.Model):
     
 class Address(models.Model):
     street = models.CharField(max_length=60)
-    number = models.IntegerField(null=True)
+    number = models.CharField(max_length=5, null=True)
     complement = models.CharField(max_length=50)
     district = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
+    cep = models.CharField(max_length=11, blank=True)
     state = models.CharField(max_length=20, blank=True)
 
     def __str__(self):
